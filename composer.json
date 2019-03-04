@@ -11,13 +11,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Jubeki\\Nova\\Card\\": "src/"
+            "Jubeki\\Nova\\Cards\\Linkable\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Jubeki\\Nova\\Card\\CardServiceProvider"
+                "Jubeki\\Nova\\Cards\\Linkable\\CardServiceProvider"
             ]
         }
     },

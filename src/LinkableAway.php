@@ -1,6 +1,6 @@
 <?php
 
-namespace Jubeki\Nova\Card;
+namespace Jubeki\Nova\Cards\Linkable;
 
 class LinkableAway extends AbstractLinkable
 {
