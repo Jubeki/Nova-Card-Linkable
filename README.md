@@ -10,6 +10,7 @@
     * [Linkable](#linkable)
     * [Linkable Away](#linkable-away)
     * [Linkable Router](#linkable-router)
+
 ## Requirements
 * [Laravel v5.8.*](https://laravel.com/docs/5.8)
 * [Laravel Nova v2.*](https://nova.laravel.com/docs/2.0/)
