@@ -1,6 +1,6 @@
 <template>
-    <router-link tag="a" :to="this.url" class="cursor-pointer no-underline text-80">
-        <card-heading :title="this.title" :subtitle="this.subtitle"></card-heading>
+    <router-link tag="a" :to="this.url" class="cursor-pointer no-underline">
+        <card-heading :title="this.title" :subtitle="this.subtitle" :theme="theme" :hover="hover"></card-heading>
     </router-link>
 </template>
 
@@ -17,10 +17,13 @@ export default {
         },
         subtitle() {
             return this.card.subtitle
-        }
+        },
+        theme() {
+            return this.card.theme
+        },
+        hover() {
+            return this.card.hover
+        },
     },
-    mounted() {
-        console.log(this.url);
-    }
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
-    <a :href="this.url" :target="this.target" class="cursor-pointer no-underline text-80">
-        <card-heading :title="this.title" :subtitle="this.subtitle"></card-heading>
+    <a :href="this.url" :target="this.target" class="cursor-pointer no-underline">
+        <card-heading :title="this.title" :subtitle="this.subtitle" :theme="theme" :hover="hover"></card-heading>
     </a>
 </template>
 
@@ -20,7 +20,13 @@ export default {
         },
         target() {
             return this.card.target
-        }
+        },
+        theme() {
+            return this.card.theme
+        },
+        hover() {
+            return this.card.hover
+        },
     },
 }
 </script>

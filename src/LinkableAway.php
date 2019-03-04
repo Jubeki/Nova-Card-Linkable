@@ -2,12 +2,11 @@
 
 namespace Jubeki\Nova\Card;
 
-use Laravel\Nova\Card;
-
-class LinkableAway extends Card
+class LinkableAway extends AbstractLinkable
 {
 
     public function __construct() {
+        parent::__construct();
         $this->withMeta([
             'url' => 'https://nova.laravel.com',
             'title' => 'Linkable Card Away',
@@ -17,25 +16,13 @@ class LinkableAway extends Card
     }
 
     /**
-     * The width of the card (1/3, 1/2, or full).
-     *
-     * @var string
+     * Sets the target attribute of the <a> tag
      */
-    public $width = '1/3';
-
-    public function url($url) {
-        return $this->withMeta(['url' => $url]);
+    public function target($target) {
+        return $this->withMeta([
+            'target' => $target,
+        ]);
     }
-
-    public function title($title) {
-        return $this->withMeta(['title' => $title]);
-    }
-
-
-    public function subtitle($subtitle) {
-        return $this->withMeta(['subtitle' => $subtitle]);
-    }
-
 
     /**
      * Get the component name for the element.
