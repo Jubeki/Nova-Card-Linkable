@@ -33,6 +33,48 @@ The Design is the same for all of them and most of the options are also the same
 #### Default Design
 ![Shows the Card types](card.png)
 
+## Usage
+
+```php
+// in app/Providers/NovaServiceProvider.php
+namespace App\Providers;
+
+[..]
+
+use Jubeki\Nova\Cards\Linkable\Linkable;
+use Jubeki\Nova\Cards\Linkable\LinkableAway;
+use Jubeki\Nova\Cards\Linkable\LinkableRouter;
+
+class NovaServiceProvider extends NovaApplicationServiceProvider
+{
+
+[..]
+
+    protected function cards()
+    {
+       return [
+           (new Linkable)
+           ->title('Card 1')
+           ->url("/resources/users")
+           ->subtitle('This is a smaller Subtitle'),
+
+           (new LinkableAway)
+           ->title('2nd Card')
+           ->url("https://github.com/Jubeki/Nova-Card-Linkable/")
+           ->subtitle('Put everything you want here'),
+
+           (new LinkableRouter)
+           ->title('Another Card')
+           ->url('{"name": "index", "params": {"resourceName": "users"}}')
+           ->subtitle('You could also leave it empty'),
+       ];
+   }
+   
+   [..]
+   
+}
+```
+
 #### Options
 All options are chainable.
 
