@@ -92,7 +92,7 @@ This sets the colors of the card, default values:
 `$background = 'bg-white'`  
 `$text = 'text-80'`
 
-`$linkable->hover($background, $text);`  
+`$linkable->themeHover($background, $text);`  
 This sets the colors of the card while it is beeing hovered, default values:  
 `$background = 'bg-50'`  
 `$text = 'text-80'`
