@@ -12,7 +12,7 @@
     * [Linkable Router](#linkable-router)
 
 ## Requirements
-* [Laravel v5.8.*](https://laravel.com/docs/5.8)
+* [Laravel v6.*](https://laravel.com/docs/6.x) | [v5.8.*](https://laravel.com/docs/5.8)
 * [Laravel Nova v2.*](https://nova.laravel.com/docs/2.0/)
 
 ## Installation
