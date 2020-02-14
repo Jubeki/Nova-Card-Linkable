@@ -12,7 +12,7 @@
     * [Linkable Router](#linkable-router)
 
 ## Requirements
-* [Laravel v5.8.*](https://laravel.com/docs/5.8)
+* [Laravel v6.*](https://laravel.com/docs/6.x) | [v5.8.*](https://laravel.com/docs/5.8)
 * [Laravel Nova v2.*](https://nova.laravel.com/docs/2.0/)
 
 ## Installation
@@ -23,15 +23,57 @@ After this the setup will be complete and you can use the components listed here
 
 ## Cards
 
-What ist the difference between the card types?
+What is the difference between the card types?
 * **Linkable:** Links to a page in your application
-* **Linkable Away:** Links to a page which is outside of you application
+* **Linkable Away:** Links to a page which is outside of your application
 * **Linkable Router:** Uses the [Vue-Router](https://router.vuejs.org/) to link to a page
 
 The Design is the same for all of them and most of the options are also the same, so they will be listed here.
 
 #### Default Design
 ![Shows the Card types](card.png)
+
+## Usage
+
+```php
+// in app/Providers/NovaServiceProvider.php
+namespace App\Providers;
+
+[..]
+
+use Jubeki\Nova\Cards\Linkable\Linkable;
+use Jubeki\Nova\Cards\Linkable\LinkableAway;
+use Jubeki\Nova\Cards\Linkable\LinkableRouter;
+
+class NovaServiceProvider extends NovaApplicationServiceProvider
+{
+
+[..]
+
+    protected function cards()
+    {
+       return [
+           (new Linkable)
+           ->title('Card 1')
+           ->url("/resources/users")
+           ->subtitle('This is a smaller Subtitle'),
+
+           (new LinkableAway)
+           ->title('2nd Card')
+           ->url("https://github.com/Jubeki/Nova-Card-Linkable/")
+           ->subtitle('Put everything you want here'),
+
+           (new LinkableRouter)
+           ->title('Another Card')
+           ->url('{"name": "index", "params": {"resourceName": "users"}}')
+           ->subtitle('You could also leave it empty'),
+       ];
+   }
+   
+   [..]
+   
+}
+```
 
 #### Options
 All options are chainable.
@@ -50,7 +92,7 @@ This sets the colors of the card, default values:
 `$background = 'bg-white'`  
 `$text = 'text-80'`
 
-`$linkable->hover($background, $text);`  
+`$linkable->themeHover($background, $text);`  
 This sets the colors of the card while it is beeing hovered, default values:  
 `$background = 'bg-50'`  
 `$text = 'text-80'`
@@ -86,7 +128,7 @@ Equals to `<a target="$target">`
 #### Options:
 `$linkable->url($url)`  
 is a little bit different than the other ones:  
-Here you can make full use of the [Vue-Router](https://router.vuejs.org/), which is uses by Laravel Nova.
+Here you can make full use of the [Vue-Router](https://router.vuejs.org/), which is used by Laravel Nova.
 
 Important side note:  
 The URL must be valid JSON!  
