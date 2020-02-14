@@ -91,3 +91,14 @@ Here you can make full use of the [Vue-Router](https://router.vuejs.org/), which
 Important side note:  
 The URL must be valid JSON!  
 e.g. `$url = '{"name":"index", "params":{"resourceName":"users"}}'`
+
+Alternative to JSON: Use an array
+e.g.  
+```php
+$url = [
+    'name' => 'index',
+    'params' => [
+        'resourceName' => 'users',
+    ],
+]
+```

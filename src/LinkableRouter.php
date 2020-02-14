@@ -14,6 +14,13 @@ class LinkableRouter extends AbstractLinkable
         ]);
     }
 
+    public function url($url) {
+        if(is_array($url)) {
+            return parent::url(json_encode($url));
+        }
+        return parent::url($url);
+    }
+
     /**
      * Get the component name for the element.
      *
