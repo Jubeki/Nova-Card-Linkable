@@ -12,8 +12,12 @@
     * [Linkable Router](#linkable-router)
 
 ## Requirements
-* [Laravel v6.*](https://laravel.com/docs/6.x) | [v5.8.*](https://laravel.com/docs/5.8)
-* [Laravel Nova v2.*](https://nova.laravel.com/docs/2.0/)
+* [Laravel v7.x](https://laravel.com/docs/7.x)
+* [Laravel Nova v3.x](https://nova.laravel.com/docs/3.0/)
+
+Alternative for older versions of Laravel:
+* [Laravel v6.x](https://laravel.com/docs/6.x) | [v5.8.x](https://laravel.com/docs/5.8)
+* [Laravel Nova v2.x](https://nova.laravel.com/docs/2.0/)
 
 ## Installation
 
