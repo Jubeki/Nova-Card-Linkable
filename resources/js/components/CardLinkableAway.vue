@@ -1,6 +1,6 @@
 <template>
-    <a :href="this.url" :target="this.target" class="cursor-pointer no-underline">
-        <CardHeading :title="this.title" :subtitle="this.subtitle" :theme="theme" :hover="hover"></CardHeading>
+    <a :href="this.card.url" :target="this.card.target" class="cursor-pointer no-underline">
+        <CardHeading :title="this.card.title" :subtitle="this.card.subtitle" :theme="this.card.theme" />
     </a>
 </template>
 
@@ -12,27 +12,6 @@ export default {
 
     components: {
         CardHeading,
-    },
-
-    computed: {
-        url() {
-            return this.card.url
-        },
-        title() {
-            return this.card.title
-        },
-        subtitle() {
-            return this.card.subtitle
-        },
-        target() {
-            return this.card.target
-        },
-        theme() {
-            return this.card.theme
-        },
-        hover() {
-            return this.card.hover
-        },
     },
 }
 </script>

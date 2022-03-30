@@ -4,9 +4,15 @@ namespace Jubeki\Nova\Cards\Linkable;
 
 class LinkableRouter extends AbstractLinkable
 {
-
-    public function __construct() {
+    /**
+     * Construct a new Linkable Router Card with a predefined theme.
+     * 
+     * @return void 
+     */
+    public function __construct()
+    {
         parent::__construct();
+
         $this->withMeta([
             'url' => '{"name": "dashboard"}',
             'title' => 'Linkable Card Away',
@@ -14,11 +20,23 @@ class LinkableRouter extends AbstractLinkable
         ]);
     }
 
-    public function url($url) {
+    /**
+     * Set Intertia Router Parameters which the Card should redirect to.
+     * 
+     * @param string|array $url 
+     * @return static 
+     */
+    public function url(string|array $url): static
+    {
         if(is_array($url)) {
-            return parent::url(json_encode($url));
+            return $this->withMeta([
+                'url' => json_encode($url),
+            ]);
         }
-        return parent::url($url);
+        
+        return $this->withMeta([
+            'url' => $url,
+        ]);
     }
 
     /**
@@ -26,8 +44,8 @@ class LinkableRouter extends AbstractLinkable
      *
      * @return string
      */
-    public function component()
+    public function component(): string
     {
-        return 'card-linkable-router';
+        return 'CardLinkableRouter';
     }
 }

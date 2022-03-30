@@ -9,6 +9,7 @@
 
 * [Requirements](#requirements)
 * [Installation](#installation)
+* [Upgrading from 1.x to 2.x](#upgrading-from-1.x-to-2.x)
 * [Cards](#cards)
     * [Linkable](#linkable)
     * [Linkable Away](#linkable-away)
@@ -27,7 +28,7 @@ composer require jubeki/nova-card-linkable
 ```
 After this the setup will be complete and you can use the components listed here.
 
-## Upgrading from 1.x
+## Upgrading from 1.x to 2.x
 
 To upgrade from `1.x` to `2.x` please take a look at the [Upgrade Guide](UPGRADE.md)
 
@@ -49,6 +50,7 @@ The Design is the same for all of them and most of the options are also the same
 <!-- TODO: Upgrade usage for Laravel Nova 4 -->
 ```php
 // in app/Nova/Dashboards/Main.php
+
 namespace App\Nova\Dashboards;
 
 use Jubeki\Nova\Cards\Linkable\Linkable;
@@ -63,89 +65,91 @@ class Main extends Dashboard
        return [
            (new Linkable)
            ->title('Card 1')
-           ->url("/resources/users")
+           ->url('/resources/users')
            ->subtitle('This is a smaller Subtitle'),
 
            (new LinkableAway)
            ->title('2nd Card')
-           ->url("https://github.com/Jubeki/Nova-Card-Linkable/")
+           ->url('https://github.com/Jubeki/Nova-Card-Linkable/')
            ->subtitle('Put everything you want here'),
 
            (new LinkableRouter)
            ->title('Another Card')
-           ->url('{"name": "index", "params": {"resourceName": "users"}}')
+           ->url([
+                'name' => 'index',
+                'params' => [
+                    'resourceName' => 'users',
+                ],
+            ])
            ->subtitle('You could also leave it empty'),
        ];
    }
 }
 ```
 
-#### Options
+### Options
+
 All options are chainable.
 
-`$linkable->url($url);`  
-This sets the link to be used in the application
+#### Setting the subtitle of the Card
 
-`$linkable->title($title);`  
-This sets the title of the card
-
-`$linkable->subtitle($subtitle);`  
-This sets the subtitle of the card
-
-`$linkable->theme($background, $text);`  
-This sets the colors of the card, default values:  
-`$background = 'bg-white'`  
-`$text = 'text-80'`
-
-`$linkable->themeHover($background, $text);`  
-This sets the colors of the card while it is beeing hovered, default values:  
-`$background = 'bg-50'`  
-`$text = 'text-80'`
-
-### Linkable
-#### Import for this component:  
-`use Jubeki\Nova\Cards\Linkable\Linkable;`
-
-#### How to create an instance:  
-`$linkable = new Linkable;`
-
-#### Additional options:
-none
-
-### Linkable Away
-#### Import for this component:  
-`use Jubeki\Nova\Cards\Linkable\LinkableAway;`
-
-#### How to create an instance:  
-`$linkable = new LinkableAway;`
-
-#### Additional options:
-`$linkable->target($target);`  
-Equals to `<a target="$target">`
-
-### Linkable Router
-#### Import for this component:  
-`use Jubeki\Nova\Cards\Linkable\LinkableRouter;`
-
-#### How to create an instance:  
-`$linkable = new LinkableRouter;`
-
-#### Options:
-`$linkable->url($url)`  
-is a little bit different than the other ones:  
-Here you can make full use of the [Vue-Router](https://router.vuejs.org/), which is used by Laravel Nova.
-
-Important side note:  
-The URL must be valid JSON!  
-e.g. `$url = '{"name":"index", "params":{"resourceName":"users"}}'`
-
-Alternative to JSON: Use an array
-e.g.  
 ```php
-$url = [
+$linkable->title('Title of Card');
+```
+
+#### Setting the subtitle of the Card
+
+```php
+$linkable->subtitle('Subtitle of Card');
+```
+
+#### Setting the theme of the Card
+
+```php
+$linkable->theme([
+    'layout' => 'flex flex-col items-center justify-center p-6',
+    'colors' => 'bg-white text-80 hover:bg-50 hover:text-80',
+    'title' => 'text-3xl font-light',
+    'subtitle' => 'text-base font-light',
+]);
+```
+
+### `Jubeki\Nova\Cards\Linkable\Linkable`
+
+#### Setting the url of the Card
+
+```php
+$linkable->url('https://github.com/Jubeki/Nova-Card-Linkable');
+```
+
+### `Jubeki\Nova\Cards\Linkable\LinkableAway`
+
+#### Setting the url of the Card
+
+```php
+$linkable->url('https://github.com/Jubeki/Nova-Card-Linkable');
+```
+
+#### Setting the target
+```php
+$linkable->target('_blank');
+```
+
+### `Jubeki\Nova\Cards\Linkable\LinkableRouter`
+
+#### Setting the Router Options
+
+Here the `url` method accepts the router options instead of a specific url. You can make full use of the [Inertia Router](https://inertiajs.com/routing) which is used in Nova 4.
+
+```php
+// Recommended
+$linkable->url([
     'name' => 'index',
     'params' => [
         'resourceName' => 'users',
     ],
-]
+]);
+
+// Deprecated, Must be valid JSON
+$linkable->url('{"name":"index", "params":{"resourceName":"users"}}');
 ```

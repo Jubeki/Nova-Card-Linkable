@@ -4,13 +4,19 @@ namespace Jubeki\Nova\Cards\Linkable;
 
 class Linkable extends AbstractLinkable
 {
-
-    public function __construct() {
+    /**
+     * Construct a new Linkable Card with a predefined theme.
+     * 
+     * @return void 
+     */
+    public function __construct()
+    {
         parent::__construct();
+
         $this->withMeta([
             'url' => '#',
             'title' => 'Linkable Card',
-            'subtitle' => ''
+            'subtitle' => '',
         ]);
     }
 
@@ -19,8 +25,21 @@ class Linkable extends AbstractLinkable
      *
      * @return string
      */
-    public function component()
+    public function component(): string
     {
-        return 'card-linkable';
+        return 'CardLinkable';
+    }
+
+    /**
+     * Set URL which the Card should redirect to.
+     * 
+     * @param string $url 
+     * @return $this
+     */
+    public function url(string $url): static
+    {
+        return $this->withMeta([
+            'url' => $url,
+        ]);
     }
 }
