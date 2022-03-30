@@ -17,7 +17,7 @@
 
 ## Requirements
 
-* [Laravel v8.x](https://laravel.com/docs/8.x)
+* [Laravel v8.x](https://laravel.com/docs/8.x) or [v9.x](https://laravel.com/docs/9.x)
 * [Laravel Nova v4.x](https://nova.laravel.com/docs/4.0/)
 
 ## Installation

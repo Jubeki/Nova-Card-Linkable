@@ -1,14 +1,32 @@
 {
     "name": "jubeki/nova-card-linkable",
     "description": "A Laravel Nova card, which has a link",
+    "type": "library",
+    "license": "MIT",
+    "homepage": "https://github.com/Jubeki/Nova-Card-Linkable",
+    "authors": [
+        {
+            "name": "Julius Kiekbusch",
+            "email": "contact@julius-kiekbusch.de",
+            "homepage": "https://julius-kiekbusch.de",
+            "role": "Developer"
+        }
+    ],
     "keywords": [
         "laravel",
-        "nova"
+        "nova",
+        "dashboard",
+        "cards"
     ],
-    "license": "MIT",
     "require": {
-        "laravel/nova": "^4.0",
-        "php": "^8.0"
+        "php": "^8.0",
+        "laravel/nova": "^4.0"
+    },
+    "require-dev": {
+        "jubeki/laravel-code-style": "^1.0.0",
+        "nunomaduro/larastan": "^2.1",
+        "orchestra/testbench": "^7.1",
+        "phpunit/phpunit": "^9.5"
     },
     "autoload": {
         "psr-4": {
@@ -21,6 +39,10 @@
                 "Jubeki\\Nova\\Cards\\Linkable\\CardServiceProvider"
             ]
         }
+    },
+    "scripts": {
+        "check-style": "vendor/bin/php-cs-fixer fix --dry-run --diff",
+        "fix-style": "vendor/bin/php-cs-fixer fix"
     },
     "config": {
         "sort-packages": true
