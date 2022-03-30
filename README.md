@@ -54,10 +54,11 @@ namespace App\Nova\Dashboards;
 use Jubeki\Nova\Cards\Linkable\Linkable;
 use Jubeki\Nova\Cards\Linkable\LinkableAway;
 use Jubeki\Nova\Cards\Linkable\LinkableRouter;
+use Laravel\Nova\Dashboard;
 
-class Main extends NovaApplicationServiceProvider
+class Main extends Dashboard
 {
-    protected function cards()
+    public function cards()
     {
        return [
            (new Linkable)
