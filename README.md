@@ -1,4 +1,7 @@
 # Linkable Cards for Laravel Nova
+
+> ⚠️ These docs are for the latest version. If you are using an older version you can find the docs for previous releases [here](https://github.com/Jubeki/Nova-Card-Linkable/tree/1.x#readme). To upgrade from `1.x` to `2.x` please take a look at the [Upgrade Guide](UPGRADE.md)
+
 ## Add Cards to Laravel Nova which link to another page
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/jubeki/nova-card-linkable.svg?style=flat-square)](https://packagist.org/packages/jubeki/nova-card-linkable)
@@ -12,48 +15,48 @@
     * [Linkable Router](#linkable-router)
 
 ## Requirements
-* [Laravel v7.x](https://laravel.com/docs/7.x)
-* [Laravel Nova v3.x](https://nova.laravel.com/docs/3.0/)
 
-Alternative for older versions of Laravel:
-* [Laravel v6.x](https://laravel.com/docs/6.x) | [v5.8.x](https://laravel.com/docs/5.8)
-* [Laravel Nova v2.x](https://nova.laravel.com/docs/2.0/)
+* [Laravel v8.x](https://laravel.com/docs/8.x)
+* [Laravel Nova v4.x](https://nova.laravel.com/docs/4.0/)
 
 ## Installation
 
 Just run:  
-`composer require jubeki/nova-card-linkable`  
+```
+composer require jubeki/nova-card-linkable
+```
 After this the setup will be complete and you can use the components listed here.
+
+## Upgrading from 1.x
+
+To upgrade from `1.x` to `2.x` please take a look at the [Upgrade Guide](UPGRADE.md)
 
 ## Cards
 
 What is the difference between the card types?
 * **Linkable:** Links to a page in your application
 * **Linkable Away:** Links to a page which is outside of your application
-* **Linkable Router:** Uses the [Vue-Router](https://router.vuejs.org/) to link to a page
+* **Linkable Router:** Uses the [Inertia-Router](https://inertiajs.com/routing) to link to a page
 
 The Design is the same for all of them and most of the options are also the same, so they will be listed here.
 
 #### Default Design
 ![Shows the Card types](card.png)
+<!-- TODO: New Image for Laravel Nova 4 -->
 
 ## Usage
 
+<!-- TODO: Upgrade usage for Laravel Nova 4 -->
 ```php
-// in app/Providers/NovaServiceProvider.php
-namespace App\Providers;
-
-[..]
+// in app/Nova/Dashboards/Main.php
+namespace App\Nova\Dashboards;
 
 use Jubeki\Nova\Cards\Linkable\Linkable;
 use Jubeki\Nova\Cards\Linkable\LinkableAway;
 use Jubeki\Nova\Cards\Linkable\LinkableRouter;
 
-class NovaServiceProvider extends NovaApplicationServiceProvider
+class Main extends NovaApplicationServiceProvider
 {
-
-[..]
-
     protected function cards()
     {
        return [
@@ -73,9 +76,6 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
            ->subtitle('You could also leave it empty'),
        ];
    }
-   
-   [..]
-   
 }
 ```
 
