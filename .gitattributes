@@ -5,11 +5,13 @@
 /.gitattributes             export-ignore
 /.github                    export-ignore
 /.gitignore                 export-ignore
+/.php-cs-fixer.dist.php     export-ignore
 /card.png                   export-ignore
 /composer.lock              export-ignore
 /node_modules               export-ignore
 /resources                  export-ignore
 /package-lock.json          export-ignore
-/package-lock.json          export-ignore
+/phpstan.neon.dist          export-ignore
+/phpunit.xml.dist           export-ignore
 /vendor                     export-ignore
 /webpack.mix.js             export-ignore
