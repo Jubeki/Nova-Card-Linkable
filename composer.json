@@ -1,6 +1,6 @@
 {
     "name": "jubeki/nova-card-linkable",
-    "description": "A Laravel Nova card, which has a link",
+    "description": "A Linkeable Card for the Laravel Nova Dashboard.",
     "type": "library",
     "license": "MIT",
     "homepage": "https://github.com/Jubeki/Nova-Card-Linkable",
