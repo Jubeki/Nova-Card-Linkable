@@ -17,7 +17,7 @@ abstract class AbstractLinkable extends Card
             'theme' => config('nova-card-linkable.theme'),
         ]);
 
-        $this->width = config('nova-card-linkable.width', '1/3');
+        $this->width = config('nova-card-linkable.width');
     }
 
     /**
@@ -25,7 +25,7 @@ abstract class AbstractLinkable extends Card
      *
      * @var string
      */
-    public $width = '1/3';
+    public $width;
 
     /**
      * Set title which will be shown on the Card.
