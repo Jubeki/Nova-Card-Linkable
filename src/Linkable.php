@@ -6,9 +6,9 @@ class Linkable extends AbstractLinkable
 {
     /**
      * Construct a new Linkable Card with a predefined theme.
-     * 
+     *
      * @param  string|null  $component
-     * @return void 
+     * @return void
      */
     public function __construct($component = null)
     {
@@ -33,8 +33,8 @@ class Linkable extends AbstractLinkable
 
     /**
      * Set URL which the Card should redirect to.
-     * 
-     * @param string $url 
+     *
+     * @param  string  $url
      * @return $this
      */
     public function url(string $url): static

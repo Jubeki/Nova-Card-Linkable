@@ -15,12 +15,12 @@ return [
          | Define the default theming of the Cards
          */
         'colors' => 'text-90 hover:text-primary-600',
-    
+
         /*
          | Define the default theming of the title of the Cards
          */
         'title' => 'text-3xl font-light text-center',
-    
+
         /*
          | Define the default theming of the subtitle of the Cards
          */

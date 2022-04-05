@@ -6,9 +6,9 @@ class LinkableAway extends AbstractLinkable
 {
     /**
      * Construct a new Linkable Away Card with a predefined theme.
-     * 
+     *
      * @param  string|null  $component
-     * @return void 
+     * @return void
      */
     public function __construct($component = null)
     {
@@ -34,8 +34,8 @@ class LinkableAway extends AbstractLinkable
 
     /**
      * Set the target of the Card on how to open the link (like in a new tab or window).
-     * 
-     * @param string $target
+     *
+     * @param  string  $target
      * @return $this
      */
     public function target(string $target): static
@@ -47,8 +47,8 @@ class LinkableAway extends AbstractLinkable
 
     /**
      * Set URL which the Card should redirect to.
-     * 
-     * @param string $url 
+     *
+     * @param  string  $url
      * @return $this
      */
     public function url(string $url): static

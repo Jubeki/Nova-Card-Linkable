@@ -8,9 +8,9 @@ abstract class AbstractLinkable extends Card
 {
     /**
      * Construct a new Card with a predefined theme.
-     * 
+     *
      * @param  string|null  $component
-     * @return void 
+     * @return void
      */
     public function __construct($component = null)
     {
@@ -25,8 +25,8 @@ abstract class AbstractLinkable extends Card
 
     /**
      * Set title which will be shown on the Card.
-     * 
-     * @param string $title 
+     *
+     * @param  string  $title
      * @return $this
      */
     public function title(string $title): static
@@ -38,8 +38,8 @@ abstract class AbstractLinkable extends Card
 
     /**
      * Set subtitle which will be shown on the Card.
-     * 
-     * @param string $subtitle 
+     *
+     * @param  string  $subtitle
      * @return $this
      */
     public function subtitle(string $subtitle): static
@@ -50,9 +50,9 @@ abstract class AbstractLinkable extends Card
     }
 
     /**
-     * Set the theme of the card
-     * 
-     * @param array $theme
+     * Set the theme of the card.
+     *
+     * @param  array  $theme
      * @return $this
      */
     public function theme(array $theme): static
