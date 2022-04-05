@@ -39,10 +39,10 @@ To upgrade from `1.x` to `2.x` please take a look at the [Upgrade Guide](UPGRADE
 ## Cards
 
 What is the difference between the card types?
-* **Linkable:** Links to a page in your application
+* **Linkable:** Links to a page in your application and makes use of inertia links
 * **Linkable Away:** Links to a page which is outside of your application
 
-The Design is the same for all of them and most of the options are also the same, so they will be listed here.
+The Design is the same for all of them and most of the options are also the same, so they will be listed here. (The left linkable card has a hover effect applied)
 
 ![Shows the Card types](cards.png)
 
