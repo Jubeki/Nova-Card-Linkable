@@ -117,16 +117,8 @@ $linkable->theme([
 ]);
 ```
 
-### `Jubeki\Nova\Cards\Linkable\Linkable`
-This card makes use of Inertia links.
-
-There are no further Options.
-
-### `Jubeki\Nova\Cards\Linkable\LinkableAway`
-
-#### Setting the url of the Card
-
 #### Setting the target
+only available for `Jubeki\Nova\Cards\Linkable\LinkableAway`
 ```php
 $linkable->target('_blank');
 ```
