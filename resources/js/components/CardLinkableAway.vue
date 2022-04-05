@@ -1,32 +1,17 @@
 <template>
-    <a :href="this.url" :target="this.target" class="cursor-pointer no-underline">
-        <card-heading :title="this.title" :subtitle="this.subtitle" :theme="theme" :hover="hover"></card-heading>
+    <a :href="this.card.url" :target="this.card.target" class="cursor-pointer no-underline">
+        <CardHeading :title="this.card.title" :subtitle="this.card.subtitle" :theme="this.card.theme" />
     </a>
 </template>
 
 <script>
+import CardHeading from './CardHeading.vue'
+
 export default {
     props: ['card'],
 
-    computed: {
-        url() {
-            return this.card.url
-        },
-        title() {
-            return this.card.title
-        },
-        subtitle() {
-            return this.card.subtitle
-        },
-        target() {
-            return this.card.target
-        },
-        theme() {
-            return this.card.theme
-        },
-        hover() {
-            return this.card.hover
-        },
+    components: {
+        CardHeading,
     },
 }
 </script>

@@ -6,65 +6,59 @@ use Laravel\Nova\Card;
 
 abstract class AbstractLinkable extends Card
 {
+    /**
+     * Construct a new Card with a predefined theme.
+     * 
+     * @param  string|null  $component
+     * @return void 
+     */
+    public function __construct($component = null)
+    {
+        parent::__construct($component);
 
-    public function __construct() {
         $this->withMeta([
-            'theme' => [
-                'background' => 'bg-white',
-                'text' => 'text-80',
-            ],
-            'hover' => [
-                'background' => 'bg-50',
-                'text' => 'text-80',
-            ],
+            'theme' => config('nova-card-linkable.theme'),
+        ]);
+
+        $this->width(config('nova-card-linkable.width'));
+    }
+
+    /**
+     * Set title which will be shown on the Card.
+     * 
+     * @param string $title 
+     * @return $this
+     */
+    public function title(string $title): static
+    {
+        return $this->withMeta([
+            'title' => $title,
         ]);
     }
 
     /**
-     * The width of the card (1/3, 1/2, or full).
-     *
-     * @var string
+     * Set subtitle which will be shown on the Card.
+     * 
+     * @param string $subtitle 
+     * @return $this
      */
-    public $width = '1/3';
-
-    /**
-     * Which url should the card direct to
-     */
-    public function url($url) {
-        return $this->withMeta(['url' => $url]);
+    public function subtitle(string $subtitle): static
+    {
+        return $this->withMeta([
+            'subtitle' => $subtitle,
+        ]);
     }
 
     /**
-     * Which title will be displayed in the card
+     * Set the theme of the card
+     * 
+     * @param array $theme
+     * @return $this
      */
-    public function title($title) {
-        return $this->withMeta(['title' => $title]);
-    }
-
-    /**
-     * Which subtitle will be display in the card
-     */
-    public function subtitle($subtitle) {
-        return $this->withMeta(['subtitle' => $subtitle]);
-    }
-
-    /**
-     * How does the card look like
-     */
-    public function theme($background, $text) {
-        return $this->withMeta(['theme' => [
-            'background' => $background,
-            'text' => $text,
-        ]]);
-    }
-
-    /**
-     * How does the card look like while hovering
-     */
-    public function themeHover($background, $text) {
-        return $this->withMeta(['hover' => [
-            'background' => $background,
-            'text' => $text,
-        ]]);
+    public function theme(array $theme): static
+    {
+        return $this->withMeta([
+            'theme' => array_merge_recursive($theme, config('nova-card-linkable.theme')),
+        ]);
     }
 }

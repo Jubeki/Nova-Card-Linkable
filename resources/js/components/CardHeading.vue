@@ -1,22 +1,12 @@
 <template>
-    <card class="flex flex-col items-center justify-center p-6" :class="this.style">
-        <h1 class="text-3xl font-light" v-text="this.title"></h1>
-        <h2 class="text-base font-light" v-text="this.subtitle"></h2>
-    </card>
+    <Card :class="this.theme.layout + ' ' + this.theme.colors">
+        <h1 :class="this.theme.title" v-text="this.title"></h1>
+        <p :class="this.theme.subtitle" v-text="this.subtitle"></p>
+    </Card>
 </template>
 
 <script>
 export default {
-    props: ['title', 'subtitle', 'theme', 'hover'],
-    computed: {
-        style() {
-            return [
-                this.theme.background,
-                this.theme.text,
-                'hover:' + this.hover.background,
-                'hover:' + this.hover.text,
-            ]
-        }
-    }
+    props: ['title', 'subtitle', 'theme'],
 }
 </script>

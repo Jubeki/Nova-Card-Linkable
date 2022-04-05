@@ -1,29 +1,17 @@
 <template>
-    <router-link tag="a" :to="this.url" class="cursor-pointer no-underline">
-        <card-heading :title="this.title" :subtitle="this.subtitle" :theme="theme" :hover="hover"></card-heading>
-    </router-link>
+    <Link :href="this.card.url" class="cursor-pointer no-underline">
+        <CardHeading :title="this.card.title" :subtitle="this.card.subtitle" :theme="this.card.theme" />
+    </Link>
 </template>
 
 <script>
+import CardHeading from './CardHeading.vue'
+
 export default {
     props: ['card'],
 
-    computed: {
-        url() {
-            return this.card.url
-        },
-        title() {
-            return this.card.title
-        },
-        subtitle() {
-            return this.card.subtitle
-        },
-        theme() {
-            return this.card.theme
-        },
-        hover() {
-            return this.card.hover
-        },
+    components: {
+        CardHeading,
     },
 }
 </script>

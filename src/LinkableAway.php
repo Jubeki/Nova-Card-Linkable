@@ -4,23 +4,21 @@ namespace Jubeki\Nova\Cards\Linkable;
 
 class LinkableAway extends AbstractLinkable
 {
+    /**
+     * Construct a new Linkable Away Card with a predefined theme.
+     * 
+     * @param  string|null  $component
+     * @return void 
+     */
+    public function __construct($component = null)
+    {
+        parent::__construct($component);
 
-    public function __construct() {
-        parent::__construct();
         $this->withMeta([
             'url' => 'https://nova.laravel.com',
             'title' => 'Linkable Card Away',
             'subtitle' => '',
-            'target' => '_blank'
-        ]);
-    }
-
-    /**
-     * Sets the target attribute of the <a> tag
-     */
-    public function target($target) {
-        return $this->withMeta([
-            'target' => $target,
+            'target' => '_blank',
         ]);
     }
 
@@ -29,8 +27,34 @@ class LinkableAway extends AbstractLinkable
      *
      * @return string
      */
-    public function component()
+    public function component(): string
     {
-        return 'card-linkable-away';
+        return 'CardLinkableAway';
+    }
+
+    /**
+     * Set the target of the Card on how to open the link (like in a new tab or window).
+     * 
+     * @param string $target
+     * @return $this
+     */
+    public function target(string $target): static
+    {
+        return $this->withMeta([
+            'target' => $target,
+        ]);
+    }
+
+    /**
+     * Set URL which the Card should redirect to.
+     * 
+     * @param string $url 
+     * @return $this
+     */
+    public function url(string $url): static
+    {
+        return $this->withMeta([
+            'url' => $url,
+        ]);
     }
 }
