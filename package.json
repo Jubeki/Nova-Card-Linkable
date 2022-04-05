@@ -10,8 +10,8 @@
         "production": "mix --production"
     },
     "devDependencies": {
-        "@inertiajs/inertia-vue3": "^0.6.0",
         "@vue/compiler-sfc": "^3.2.22",
-        "laravel-mix": "^6.0.41"
+        "laravel-mix": "^6.0.41",
+        "vue-loader": "^16.8.3"
     }
 }

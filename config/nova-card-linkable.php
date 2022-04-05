@@ -10,26 +10,26 @@ return [
         /*
          | Define the default layout of the Cards
          */
-        'layout' => 'flex flex-col items-center justify-center p-6',
-    
+        'layout' => 'p-3 flex flex-col items-center justify-center h-full',
         /*
-         | Define the default theming of the Cards (Consider dark mode)
+         | Define the default theming of the Cards
          */
-        'colors' => 'bg-white text-80 hover:bg-50 hover:text-80',
+        'colors' => 'text-90 hover:text-primary-600',
     
         /*
          | Define the default theming of the title of the Cards
          */
-        'title' => 'text-3xl font-light',
+        'title' => 'text-3xl font-light text-center',
     
         /*
          | Define the default theming of the subtitle of the Cards
          */
-        'subtitle' => 'text-base font-light',
+        'subtitle' => 'text-lg font-light text-center',
     ],
 
     /*
      | Define the default width of the Card
+     | valid values: '1/3', '1/2', 'full'
      */
     'width' => '1/3',
 ];

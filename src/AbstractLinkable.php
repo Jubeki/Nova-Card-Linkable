@@ -9,23 +9,19 @@ abstract class AbstractLinkable extends Card
     /**
      * Construct a new Card with a predefined theme.
      * 
+     * @param  string|null  $component
      * @return void 
      */
-    public function __construct()
+    public function __construct($component = null)
     {
-        return $this->withMeta([
+        parent::__construct($component);
+
+        $this->withMeta([
             'theme' => config('nova-card-linkable.theme'),
         ]);
 
-        $this->width = config('nova-card-linkable.width');
+        $this->width(config('nova-card-linkable.width'));
     }
-
-    /**
-     * Defines the width of the card (1/3, 1/2, or full).
-     *
-     * @var string
-     */
-    public $width;
 
     /**
      * Set title which will be shown on the Card.

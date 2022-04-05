@@ -6,14 +6,12 @@
 
 <script>
 import CardHeading from './CardHeading.vue'
-import { Link } from '@inertiajs/inertia-vue3'
 
 export default {
     props: ['card'],
 
     components: {
         CardHeading,
-        Link,
     },
 }
 </script>

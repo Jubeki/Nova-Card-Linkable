@@ -16,7 +16,7 @@ You can now specify certain options in the config file `config/nova-card-linkabl
 
 To publish the default config simply run:
 ```
-php artisan vendor:publish --provider=""
+php artisan vendor:publish --provider="Jubeki\Nova\Cards\Linkable\CardServiceProvider"
 ```
 
 Here is also a look at the default config:
@@ -33,22 +33,21 @@ return [
         /*
          | Define the default layout of the Cards
          */
-        'layout' => 'flex flex-col items-center justify-center p-6',
-    
+        'layout' => 'p-3 flex flex-col items-center justify-center h-full',
         /*
-         | Define the default theming of the Cards (Consider dark mode)
+         | Define the default theming of the Cards
          */
-        'colors' => 'bg-white text-80 hover:bg-50 hover:text-80',
+        'colors' => 'text-90 hover:text-primary-600',
     
         /*
          | Define the default theming of the title of the Cards
          */
-        'title' => 'text-3xl font-light',
+        'title' => 'text-3xl font-light text-center',
     
         /*
          | Define the default theming of the subtitle of the Cards
          */
-        'subtitle' => 'text-base font-light',
+        'subtitle' => 'text-lg font-light text-center',
     ],
 
     /*
@@ -56,7 +55,6 @@ return [
      */
     'width' => '1/3',
 ];
-
 ```
 
 ## Uprading the Cards
@@ -65,10 +63,10 @@ The way how the theming is treated has changed. You may now simply pass the them
 
 ```php
 $card->theme([
-    'layout' => 'flex flex-col items-center justify-center p-6',
-    'colors' => 'bg-white text-80 hover:bg-50 hover:text-80',
-    'title' => 'text-3xl font-light',
-    'subtitle' => 'text-base font-light',
+        'layout' => 'p-3 flex flex-col items-center justify-center h-full',
+        'colors' => 'text-90 hover:text-primary-600',
+        'title' => 'text-3xl font-light text-center',
+        'subtitle' => 'text-lg font-light text-center',
 ]);
 ```
 
@@ -82,6 +80,5 @@ You have nothing todo.
 
 ### Linkable Router
 
-Because Nova 4 uses the Inertia Router instead of the Vue Router, you will need to change the url:
-
-<!-- TODO: Upgrade from Vue Router to Inertia Router -->
+REMOVED  
+Because Nova 4 uses the Inertia Router instead of the Vue Router, you can no longer pass an javascript object with path options.

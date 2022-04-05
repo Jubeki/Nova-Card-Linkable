@@ -7,11 +7,12 @@ class LinkableAway extends AbstractLinkable
     /**
      * Construct a new Linkable Away Card with a predefined theme.
      * 
+     * @param  string|null  $component
      * @return void 
      */
-    public function __construct()
+    public function __construct($component = null)
     {
-        parent::__construct();
+        parent::__construct($component);
 
         $this->withMeta([
             'url' => 'https://nova.laravel.com',
