@@ -109,11 +109,11 @@ $linkable->url('https://github.com/Jubeki/Nova-Card-Linkable');
 #### Setting the theme of the Card
 
 ```php
-$card->theme([
-        'layout' => 'p-3 flex flex-col items-center justify-center h-full',
-        'colors' => 'text-90 hover:text-primary-600',
-        'title' => 'text-3xl font-light text-center',
-        'subtitle' => 'text-lg font-light text-center',
+$linkable->theme([
+    'layout' => 'p-3 flex flex-col items-center justify-center h-full',
+    'colors' => 'text-90 hover:text-primary-600',
+    'title' => 'text-3xl font-light text-center',
+    'subtitle' => 'text-lg font-light text-center',
 ]);
 ```
 

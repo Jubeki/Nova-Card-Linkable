@@ -8,7 +8,7 @@ composer require jubeki/nova-card-linkable:^2.0
 
 ## Moving Cards From NovaServiceProvider to Dashboard
 
-In Nova 3 there was only on dashboard with cards. You need to move your cards to the new Dashboard where you want to add them.
+In Nova 3 there was only one dashboard with cards. You need to move your cards to the new Dashboard where you want to add them.
 
 ## Default Config
 
@@ -62,21 +62,23 @@ return [
 The way how the theming is treated has changed. You may now simply pass the theming of the card you want. Please be aware that the default config will be merged recursivly into the theme if one array-key is not provided.
 
 ```php
-$card->theme([
-        'layout' => 'p-3 flex flex-col items-center justify-center h-full',
-        'colors' => 'text-90 hover:text-primary-600',
-        'title' => 'text-3xl font-light text-center',
-        'subtitle' => 'text-lg font-light text-center',
+$linkable->theme([
+    'layout' => 'p-3 flex flex-col items-center justify-center h-full',
+    'colors' => 'text-90 hover:text-primary-600',
+    'title' => 'text-3xl font-light text-center',
+    'subtitle' => 'text-lg font-light text-center',
 ]);
 ```
 
+`themeHover` was completely removed.
+
 ### Linkable
 
-You have nothing todo
+You have nothing further todo
 
 ### Linkable Away
 
-You have nothing todo.
+You have nothing further todo.
 
 ### Linkable Router
 
