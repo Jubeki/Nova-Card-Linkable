@@ -6,7 +6,7 @@
 /.github                    export-ignore
 /.gitignore                 export-ignore
 /.php-cs-fixer.dist.php     export-ignore
-/card.png                   export-ignore
+/cards.png                  export-ignore
 /composer.lock              export-ignore
 /node_modules               export-ignore
 /resources                  export-ignore
